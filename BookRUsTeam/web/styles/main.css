@@ -1,0 +1,85 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 21, 2018, 9:51:49 AM
+    Author     : Graciela
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h2{
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+h3{
+    padding: 10px 0px 10px 0px;
+}
+#top_menu li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px 5px 10px 5px;
+}
+#mainButton{
+    padding: 3px 5px 3px 5px;
+    display: inline-block;
+}
+section{
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75%;
+    width: 75%;
+    padding: 50px 0px 50px 0px; 
+}
+#bookStack{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50%;
+    width: 50%;
+    padding: 50px 0px 50px 0px;
+}
+#bookCover{
+    display: block;
+    height: 135px;
+    width: 95px;
+    padding: 0px 0px 0px 0px;
+}
+footer{
+    padding: 10px 5px 10px 5px;
+}
+table{
+    width: 600px;
+    border-collapse: collapse;
+}
+.cartTable{
+    width: 80%;
+    border-collapse: collapse;
+}
+.cartTable th {
+    border: 1px solid #ddd;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+.cartTable td {
+    border: 1px solid #ddd;
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+}
+.cartTable tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+.cartButtons form{
+    display: inline-block;
+    padding: 20px 20px 0px 0px;
+}
+.cartQtyInput {
+    width: 50px;
+    padding:3px 5px 3px 5px;
+    margin: 0px 20px 0px 0px;
+}

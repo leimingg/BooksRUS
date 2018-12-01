@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/BooksRUsTeam">
+    <Resource name="jdbc/sql9265772" auth="Container"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://sql9.freemysqlhosting.net:3306/sql9265772"
+        username="sql9265772" password="fZDyaGN9eI"
+        maxActive="100" maxIdle="30" maxWait="1000"
+        logAbandoned="true" removeAbandoned="true"
+        removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+    
+    <Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99" 
+         dataSourceName="jdbc/sql9265772" localDataSource="true"
+         userTable="User" userNameCol="email" userCredCol="password"
+         userRoleTable="User" roleNameCol="roleName" />
+</Context>

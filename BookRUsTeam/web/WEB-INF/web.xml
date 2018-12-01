@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <!-- defining listener -->
+    <listener>
+        <listener-class>util.BooksRUsContextListener</listener-class>
+    </listener>
+    
+    <!-- defining servlet controllers -->
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>controllers.AccountServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductCatalogServlet</servlet-name>
+        <servlet-class>controllers.ProductCatalogServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>controllers.CartServlet</servlet-class>
+    </servlet>
+    
+    <!-- defining servlet url mappings-->
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/AccountServlet/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductCatalogServlet</servlet-name>
+        <url-pattern>/ProductCatalogServlet/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/ProductCatalogServlet/CartServlet/*</url-pattern>
+    </servlet-mapping>
+        
+    <!-- defining security roles -->
+    <!--
+    <security-role>
+        <description>customer</description>
+        <role-name>customer</role-name>
+    </security-role>
+    -->
+    
+    <security-constraint>
+        <!-- restrict access to files -->
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/ProductCatalogServlet/*</url-pattern>
+        </web-resource-collection>
+        
+        <!-- autorize customer role -->
+        <!--
+        <auth-constraint>
+            <role-name>customer</role-name>
+        </auth-constraint>
+        -->
+        
+        <!-- force secure connection -->
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+        
+    </security-constraint>
+    
+    <!-- user form-based authentication to provide access -->
+    <!--
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/accounts/login.jsp</form-login-page>
+            <form-error-page>/accounts/login_error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    -->
+    
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <!--
+        <tracking-mode>COOKIE</tracking-mode>
+        -->
+        <cookie-config>
+            <name>JSESSIONID</name>
+            <path>/</path>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+</web-app>
